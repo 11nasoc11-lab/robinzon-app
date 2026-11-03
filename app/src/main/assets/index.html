@@ -1,0 +1,384 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0e6f8a"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style><script>
+(function(){
+var SEED={"clients": [["client3-2026-10-27", {"address": "", "contact": "Юрьев", "declined": [], "deliveryWindow": "", "discount": "", "district": "", "docs": "", "example": false, "format": "", "lastCall": "2026-10-27", "messenger": "Telegram, тот же новый номер", "name": "", "notes": "Раньше работали с Геной. Про смену ТП что-то слышали.\nЗвонить не на тот номер, по которому звонил, а на новый.\nЗаказывают сами утром, навязываться не нужно.", "orderDays": "звонят сами по утрам", "owner": "", "ownerPhone": "", "payment": "", "phone": "+7 959 500 55 60", "point": "Юрьев", "status": "активный", "toOffer": [], "updatedAt": "2026-10-27T09:54:10.608Z", "usual": []}], ["client4-2026-10-27", {"address": "", "contact": "Вита", "declined": [], "deliveryWindow": "", "discount": "", "district": "", "docs": "", "example": false, "format": "", "lastCall": "2026-10-27", "messenger": "", "name": "", "notes": "Просили НЕ звонить: с заявкой набирают сами, так же работали с прежними ребятами.\nНомер Данила (и его Telegram на нём) передаст напарнице.\nО смене ТП им никто не говорил. Перезвонила сама после пропущенного, разговор дружелюбный.", "orderDays": "заказывают сами, не звонить", "owner": "", "ownerPhone": "", "payment": "", "phone": "+7 959 183 96 86", "point": "Пив залив", "status": "активный", "toOffer": [], "updatedAt": "2026-10-27T10:23:46.587Z", "usual": []}], ["gnatenko", {"contact": "Лена", "declined": [], "district": "", "lastCall": "2026-10-27", "messenger": "Макс или Telegram, можно СМС", "name": "ИП Гнатенко", "notes": "Давно не заказывала. О смене ТП не знала.\nЗаказы принимаем до 15:30, она пишет до 15:00. Не написала — значит, ничего не нужно.\nМожно писать и в нерабочее время.", "orderDays": "пишет сама до 15:00, если не написала, значит не нужно", "point": "Гнатенко", "status": "пауза", "toOffer": [], "updatedAt": "2026-10-27T10:27:00Z", "usual": []}], ["kupriyanova", {"address": "", "contact": "Валерия", "declined": [], "deliveryWindow": "вт и пт", "discount": "", "district": "", "docs": "", "example": false, "format": "", "lastCall": "2026-10-27", "messenger": "Макс, тот же номер", "name": "ИП Куприянова", "notes": "Хотят прайс картинками в Макс, с наличием.\nДозаказ на тот же день можно.\nС прежними ТП почти не общались, готовы брать больше, если предлагать.", "orderDays": "пн после обеда (на вторник); на пятницу — уточнить", "owner": "", "ownerPhone": "", "payment": "", "phone": "+7 959 134 90 55", "point": "Куприянова", "status": "активный", "toOffer": ["Камбала ж/б · 457", "Килька балтийская · 195", "Мойва · 393", "Сельдь 300+ · 255"], "updatedAt": "2026-10-28T03:56:09.404Z", "usual": ["Минтай?", "Хамса", "Килька черноморская", "Камбала ж/б"]}], ["sem-morey", {"address": "ул. Советская", "contact": "Юля", "declined": [], "deliveryWindow": "", "discount": "", "district": "", "docs": "", "example": false, "format": "крупный магазин", "lastCall": "2026-10-27", "messenger": "Макс", "name": "", "notes": "До этого с ними работал Андрей, о смене не предупредил. Сразу не поняла, что за фирма: уточнить, заказывали ли у нас раньше.\nПросит один раз зайти лично или хотя бы скинуть прайс.\nКрупный магазин: стоит предлагать широкий ассортимент, не только дешёвую рыбу.", "orderDays": "звонит сама, когда нужно", "owner": "", "ownerPhone": "", "payment": "", "phone": "+7 959 503 20 70", "point": "Семь морей", "status": "новый", "toOffer": ["Лосось Чили · от 1050", "Креветка королевская Polar · от 362", "Икра горбуши · от 1960", "Полуфабрикаты Polar"], "updatedAt": "2026-10-27T10:36:29.616Z", "usual": []}], ["vashchenko", {"address": "", "contact": "Дмитрий (Дима)", "declined": ["Сельдь 300+"], "deliveryWindow": "", "discount": "", "district": "", "docs": "", "example": false, "format": "", "lastCall": "2026-10-27", "messenger": "Макс, тот же номер", "name": "ИП Лащенко", "notes": "Сам звонит с заказом, не дёргать.\nИщет сельдь, лучше нового улова.\nРаньше у нас, похоже, не заказывал.", "orderDays": "пн — скинуть прайс, заказывает сам", "owner": "", "ownerPhone": "", "payment": "", "phone": "+7 959 131 72 89", "point": "Лащенко", "status": "новый", "toOffer": ["Сельдь 300+ · 255", "Филе сельди L · 260", "Скумбрия 400-600 · 575"], "updatedAt": "2026-10-28T03:56:53.008Z", "usual": []}]], "calls": [["client3-2026-10-27", {"clientId": "client3-2026-10-27", "date": "2026-10-27", "declined": [], "next": "Уточнить, что это за клиент, и полный номер. Скинуть прайс в Telegram на новый номер.", "offered": [], "ordered": [], "summary": "Знакомство. О смене ТП что-то слышали, спрашивали, принимает ли ещё заявки Гена. Дали другой номер для связи, там же Telegram, туда можно присылать прайс. Заявку сегодня уже сделали. Заказывают сами, звонят по утрам."}], ["client4-2026-10-27", {"clientId": "client4-2026-10-27", "date": "2026-10-27", "declined": [], "next": "Не звонить, ждать их звонка. Уточнить у Данила название точки и имя.", "offered": [], "ordered": [], "summary": "Перезвонила сама после пропущенного. Попросила не звонить: с заявкой наберут сами. Номер Данила передаст напарнице. Одобрила, что он сам обзванивает клиентов."}], ["gnatenko-2026-10-27", {"clientId": "gnatenko", "date": "2026-10-27", "declined": [], "next": "Скинуть прайс в Макс и через пару дней напомнить о себе. Узнать, что она обычно берёт и почему перестала заказывать.", "offered": [], "ordered": [], "summary": "Знакомство с Леной. Давно не заказывала, о смене ТП не знала. Только вышла с выходных, сейчас всё есть. Договорились: если нужно, пишет сама до 15:00 (заказы принимаем до 15:30). Связь: Макс, Telegram или СМС."}], ["kupriyanova-2026-10-27", {"clientId": "kupriyanova", "date": "2026-10-27", "declined": [], "next": "Зарегистрироваться в Максе, найти Валерию по номеру и скинуть прайс картинками до пятницы. Отдельно предложить камбалу б/г ж/б 0,5-1,0 (457 ₽), её они искали. Уточнить: минтай ли это, сумму минимального заказа на доставку, точку и адрес, владельца.", "offered": [], "ordered": [], "summary": "Первое знакомство с Валерией. О смене ТП не знали. Доставка у них по вторникам и пятницам, заказ передают в понедельник после обеда. Связь через Макс на этом же номере, Telegram с мобильного у неё не работает. Обычно берут минтай, хамсу/анчоус, черноморскую кильку и камбалу желтобрюхую, если есть. Сегодня сами заезжали за небольшим заказом (черноморка, анчоус), потому что мелкую заявку не везут из-за минималки. Заявки сейчас нет. На пятницу посмотрят, что есть в наличии. Просит присылать прайс картинками. Дозаказ на тот же день можно."}], ["sem-morey-2026-10-27", {"clientId": "sem-morey", "date": "2026-10-27", "declined": [], "next": "Скинуть прайс в Макс и зайти в магазин лично: посмотреть витрину и морозилки, узнать, что они берут и чего не хватает.", "offered": [], "ordered": [], "summary": "Знакомство с Юлей. Андрей о смене не говорил. Попросила зайти хотя бы раз лично или скинуть прайс в Макс. Заказывать будет сама, когда нужно."}], ["vashchenko-2026-10-27", {"clientId": "vashchenko", "date": "2026-10-27", "declined": ["Сельдь 300+ (дорого при названной цене 445)"], "next": "Сразу написать в Макс: сельдь 300+ стоит 255 ₽/кг, а не 445, и скинуть прайс. Дальше каждый понедельник отправлять прайс. Уточнить название точки, адрес и дни доставки.", "offered": ["Сельдь 300+"], "ordered": [], "summary": "Знакомство с Дмитрием. Попросил прайс в Макс на этот же номер. Спрашивал про сельдь, ему назвали сельдь 300+ по 445 ₽/кг (коробка 2*14). Сказал, что дорого, и спрашивал про сельдь нового улова, её пока нет. Заказ делает сам, прайс просит скидывать по понедельникам."}]], "price": [["01-fish", {"title": "Рыба", "order": 0, "items": [{"n": "Салака", "o": "Балт", "p": "1*15", "c": "221"}, {"n": "Салака", "o": "Балт", "p": "1*15", "c": "150"}, {"n": "Скумбрия 500+ август 26г", "o": "ФО", "p": "2*12,5", "c": "793"}, {"n": "Скумбрия 500+ июнь 26г", "o": "ФО", "p": "2*12,5", "c": "740"}, {"n": "Скумбрия 500+ август 25г", "o": "ФО", "p": "2*12,5", "c": "640"}, {"n": "Скумбрия 500+ (06.-07. 25г)", "o": "ФО", "p": "2*12,5", "c": "590"}, {"n": "Скумбрия 400-600", "o": "МТФ", "p": "2*15", "c": "612"}, {"n": "Скумбрия 400-600", "o": "Азимут", "p": "1*22", "c": "575"}, {"n": "Сельдь 300+", "o": "ФО", "p": "2*14", "c": "255"}, {"n": "Камбала б/г ж/б 0,5-1,0", "o": "ДВ", "p": "1*6", "c": "457"}, {"n": "Камбала б/г б/х", "o": "ДВ", "p": "", "c": "450"}, {"n": "Корюшка", "o": "ДВ", "p": "2*11", "c": "790"}, {"n": "Навага 25+ бг штучная", "o": "ДВ", "p": "1*9", "c": "285"}, {"n": "Минтай М IQF б/г б/х", "o": "ДВ", "p": "1*13", "c": "322"}, {"n": "Минтай 25+ IQF 14кг.", "o": "ДВ", "p": "1*14", "c": "315"}, {"n": "Мойва", "o": "Сахалин", "p": "2*11", "c": "393"}, {"n": "Окунь 300-500", "o": "ФОР", "p": "4*6,5", "c": "320"}, {"n": "Окунь 150-300", "o": "ФОР", "p": "4*6,5", "c": "300"}, {"n": "Палтус 1-2", "o": "Мурманск", "p": "эл.вес", "c": "1335"}, {"n": "Пикша ПБГ 0,5-1.0", "o": "Баренц", "p": "1*6", "c": "428"}, {"n": "Путассу 25+", "o": "ФО", "p": "2*14", "c": "135"}, {"n": "Сайра", "o": "Китай", "p": "эл.вес", "c": "480"}, {"n": "Хек 601-900", "o": "Аргент", "p": "эл.вес", "c": "492"}, {"n": "Хек 200-300", "o": "Аргент", "p": "эл.вес", "c": "415"}, {"n": "Хек 150-250 Velastro", "o": "Аргент", "p": "эл.вес", "c": "470"}, {"n": "Хек 150-250 проложенный", "o": "Аргент", "p": "эл.вес", "c": "460"}, {"n": "Хек 100-200", "o": "Аргент", "p": "1*13/3*6,5", "c": "327"}, {"n": "Хамса", "o": "Севастополь", "p": "2*11", "c": "300"}, {"n": "Килька балтийская", "o": "Балт", "p": "1*15", "c": "195"}, {"n": "Дорадо 300-400", "o": "Турция", "p": "1*5", "c": "990"}, {"n": "Дорадо 400-600", "o": "Турция", "p": "1*5", "c": "960"}, {"n": "Сибас 400-600", "o": "Турция", "p": "1*5", "c": "1010"}, {"n": "Сибас 300-400", "o": "Турция", "p": "1*5", "c": "1000"}, {"n": "Пангасиус тушка 800-1200", "o": "Вьетнам", "p": "1*10", "c": "400"}], "updated": "2026-11-03"}], ["02-red", {"title": "Красная рыба", "order": 1, "items": [{"n": "Лосось Стейк М", "o": "Чили", "p": "1*5", "c": "900"}, {"n": "Лосось 11-12", "o": "Чили", "p": "эл.вес", "c": "1710"}, {"n": "Лосось 9-10", "o": "Чили", "p": "эл.вес", "c": "1700"}, {"n": "Лосось 7-8", "o": "Чили", "p": "эл.вес", "c": "1680"}, {"n": "Лосось 7-8", "o": "Чили", "p": "эл.вес", "c": "1550"}, {"n": "Лосось 6-7", "o": "Чили", "p": "эл.вес", "c": "1610"}, {"n": "Лосось 3-4", "o": "Чили", "p": "эл.вес", "c": "1050"}, {"n": "Кижуч 4,1+", "o": "Чили", "p": "эл.вес", "c": "1715"}, {"n": "Кижуч Стейк XL", "o": "Чили", "p": "1*5", "c": "1400"}, {"n": "Нерка 1,8-2,7", "o": "Апукинск", "p": "1*25", "c": "1180"}, {"n": "Форель 2,7-3,6", "o": "Турция", "p": "эл.вес", "c": "1400"}, {"n": "Форель 1,8-2,7", "o": "Турция", "p": "эл.вес", "c": "1165"}, {"n": "Форель 1,4-1,8", "o": "Турция", "p": "эл.вес", "c": "1141"}, {"n": "Форель 1,3-1,8", "o": "Турция", "p": "эл.вес", "c": "1141"}, {"n": "Форель 0,9-1,3", "o": "Турция", "p": "эл.вес", "c": "1120"}, {"n": "Форель Горная НР 1500+", "o": "Иран", "p": "эл.вес", "c": "600"}, {"n": "Форель речная 300-350", "o": "Турция", "p": "1*5", "c": "750"}, {"n": "Стейк Форели XL", "o": "Турция", "p": "1*5", "c": "1300"}, {"n": "Голец L", "o": "ДВ", "p": "1*26", "c": "900"}, {"n": "Горбуша ПБГ штучная", "o": "ДВ", "p": "БСФ", "c": "1042"}, {"n": "Горбуша НР", "o": "Оссорский", "p": "2*11", "c": "780"}], "updated": "2026-11-03"}], ["03-fillet", {"title": "Филе, стейки, фарш", "order": 2, "items": [{"n": "Фарш рыбный сурими", "o": "ДВ", "p": "1*19", "c": "172"}, {"n": "Фиш-филе", "o": "Polar", "p": "1*5", "c": "483"}, {"n": "Филе Камбалы", "o": "Polar", "p": "6*400", "c": "265"}, {"n": "Филе Палтуса", "o": "Polar", "p": "10*400", "c": "272"}, {"n": "Стейк Сайды", "o": "Мурманск", "p": "1*7", "c": "450"}, {"n": "Стейк Тунца 50+", "o": "Вьетнам", "p": "20*0,5", "c": "820"}, {"n": "Стейк Тунца Порции", "o": "Вьетнам", "p": "20*0,5", "c": "837"}, {"n": "Стейк Трески L", "o": "Мурманск", "p": "", "c": "810"}, {"n": "Стейк Зубатки Синей", "o": "Мурманск", "p": "1*7", "c": "284"}, {"n": "Стейк Форели", "o": "Иран", "p": "1*10", "c": "950"}, {"n": "Фарш Форели", "o": "Осетия", "p": "21*1", "c": "100"}, {"n": "Фарш Рыбный", "o": "Мурманск", "p": "1*1,5", "c": "100", "note": "⚠ в прайсе"}, {"n": "Фарш Горбуши", "o": "Вост. бер.", "p": "3*7,5", "c": "450"}, {"n": "Фарш Минтая", "o": "ДВ", "p": "21*1", "c": "395"}, {"n": "Филе Минтая", "o": "ДВ", "p": "21*1/0,6", "c": "520"}, {"n": "Филе Окуня IQF 227г.+", "o": "Китай", "p": "1*10", "c": "552"}, {"n": "Филе Сайды 227-454гр.", "o": "Мурманск", "p": "", "c": "700"}, {"n": "Филе Сельди L", "o": "Персей", "p": "эл.вес", "c": "260"}, {"n": "Филе Пангасиуса 5%", "o": "Вьетнам", "p": "1*10", "c": "275"}, {"n": "Филе Тилапии 5-7", "o": "Китай", "p": "1*10", "c": "425"}, {"n": "Филе Тилапии 3-5", "o": "Вьетнам", "p": "1*10", "c": "200"}, {"n": "Филе Тунца Лоин Китай", "o": "Китай", "p": "эл.вес", "c": "680"}, {"n": "Филе Тунца Лоин Вьетнам", "o": "Вьетнам", "p": "эл.вес", "c": "850"}], "updated": "2026-11-03"}], ["04-shrimp", {"title": "Креветки", "order": 3, "items": [{"n": "Креветки маринованные в панировке", "o": "Fish More", "p": "0.5*6", "c": "1126"}, {"n": "Креветки в панировке хрустящая", "o": "РФ", "p": "10*1", "c": "1085"}, {"n": "Креветки в панировке", "o": "Polar", "p": "5*1", "c": "930"}, {"n": "Креветка 70/90", "o": "Polar", "p": "6*500", "c": "546"}, {"n": "Креветка 90/120", "o": "Polar", "p": "18*500", "c": "471"}, {"n": "Креветка королевская 40/60", "o": "Polar", "p": "6*500", "c": "391"}, {"n": "Креветка королевская 50/70", "o": "Polar", "p": "6*500", "c": "368"}, {"n": "Креветка королевская 110/130", "o": "Polar", "p": "6*500", "c": "362"}, {"n": "Креветка тигр 8/12", "o": "Бангладеш", "p": "1*10", "c": "1622"}, {"n": "Креветка 16/20 IQF", "o": "Эквадор", "p": "1*10", "c": "1120"}, {"n": "Креветка 16/20 блок", "o": "Эквадор", "p": "6*1,8", "c": "1075"}, {"n": "Креветка 21/25 блок", "o": "Индия", "p": "6*1,8", "c": "1040"}, {"n": "Креветка 21/25 блок", "o": "Эквадор", "p": "6*1,8", "c": "1032"}, {"n": "Креветка 21/25 блок", "o": "Fish More", "p": "6*1,8", "c": "1060"}, {"n": "Креветка Шримс", "o": "ДВ", "p": "12*0,75", "c": "300", "note": "⚠ в прайсе"}, {"n": "Креветка L1", "o": "Аргент", "p": "6*2", "c": "930"}, {"n": "Креветка С1", "o": "Аргент", "p": "1*12", "c": "1090"}, {"n": "Креветка 41-50", "o": "Аргент", "p": "1*4", "c": "910"}, {"n": "Креветка северная 90+", "o": "Карат", "p": "1*5", "c": "1050"}, {"n": "Креветка северная 150+", "o": "Мурманск", "p": "1*5", "c": "580"}, {"n": "Креветка северная 150+", "o": "Карат", "p": "1*5", "c": "520"}, {"n": "Креветка северная 250+", "o": "Мурманск", "p": "1*5", "c": "495"}, {"n": "Креветка 50/70", "o": "Шифудо", "p": "1*5", "c": "535"}, {"n": "Креветка 16/20 очищ. без хвоста", "o": "Индия", "p": "10*1", "c": "1210"}, {"n": "Креветка 21/25 очищ. на хвосте", "o": "Индия", "p": "10*1", "c": "1153"}, {"n": "Креветка 31/40 очищ. на хвосте", "o": "Индия", "p": "10*1", "c": "1187"}, {"n": "Креветка 41/50 очищ. без хвоста", "o": "Индия", "p": "10*1", "c": "1100"}, {"n": "Креветка 26-30 очищ. на хвосте", "o": "Китай", "p": "1*10", "c": "1050"}, {"n": "Креветка 100/200 очищ", "o": "Вьетнам", "p": "1*10", "c": "1107"}, {"n": "Креветка 31/40 IQF", "o": "Шифудо", "p": "1*5", "c": "594"}, {"n": "Креветка в панировке", "o": "Индия", "p": "10*1", "c": "1085"}], "updated": "2026-11-03"}], ["05-sea", {"title": "Морепродукты", "order": 4, "items": [{"n": "Кальмар кольца в панировке", "o": "Китай", "p": "1*10", "c": "720"}, {"n": "Кальмар короб", "o": "ДВ", "p": "2*11", "c": "440"}, {"n": "Кальмар мешок", "o": "ДВ", "p": "2*11", "c": "430"}, {"n": "Гребешок на половинке с икрой", "o": "Китай", "p": "5*1", "c": "1343"}, {"n": "Гребешок филе 40-60", "o": "FishMore", "p": "20*0,46", "c": "810"}, {"n": "Каракатицы молодые 40/60", "o": "Вьетнам", "p": "1*10", "c": "865"}, {"n": "Краб конечности", "o": "ДВ", "p": "1*10", "c": "4300"}, {"n": "Лангусты 300-400", "o": "ОАЭ", "p": "1*10", "c": "4956"}, {"n": "Филе краба камч 14+", "o": "ДВ", "p": "эл.вес", "c": "2000"}, {"n": "Морской Коктейль", "o": "Китай", "p": "10*0,93", "c": "350"}, {"n": "Мясо Мидии 100-200", "o": "Чили", "p": "1*10", "c": "849"}, {"n": "Мясо Мидии 200-300", "o": "Чили", "p": "1*9,2", "c": "600"}, {"n": "Мидии в раковине 40/60", "o": "Чили", "p": "1*10", "c": "555"}, {"n": "Мидии в раковине в соусе томат-чеснок 40/60", "o": "Чили", "p": "1*10", "c": "474"}, {"n": "Мидии в половинке 30/40", "o": "Китай", "p": "12*1", "c": "380"}, {"n": "Клемы Ванголе", "o": "Китай", "p": "20*0,5", "c": "200"}, {"n": "Салат из Осьминогов", "o": "Китай", "p": "20*0,5", "c": "1300"}, {"n": "Суп Рамен", "o": "Китай", "p": "8*0,35", "c": "835"}, {"n": "Клешни малого краба", "o": "Vici", "p": "1*5", "c": "497"}, {"n": "Угорь жареный в соусе", "o": "Китай", "p": "5*2", "c": "1550"}, {"n": "Трубки кальмара U10", "o": "Китай", "p": "1*10", "c": "634"}], "updated": "2026-11-03"}], ["06-crab", {"title": "Крабовые палочки", "order": 5, "items": [{"n": "Крабовые палочки", "o": "Columbus", "p": "1*5", "c": "210"}, {"n": "Крабовые палочки для Рулет спайка", "o": "Vici", "p": "5*1", "c": "240"}, {"n": "Крабовые палочки для Рулет", "o": "Vici", "p": "1*5", "c": "235"}, {"n": "Крабовые палочки Снежный краб", "o": "СБ", "p": "12*0,5", "c": "533"}, {"n": "Крабовые палочки Снежный краб", "o": "Vici", "p": "6*0,5", "c": "485"}, {"n": "Крабовые палочки Columbus 200гр 6 кг", "o": "Vici", "p": "20*30", "c": "1320"}], "updated": "2026-11-03"}], ["07-roe", {"title": "Икра и печень", "order": 6, "items": [{"n": "Икра Нерки NEW", "o": "ДВ", "p": "1*13", "c": "16000"}, {"n": "Икра Кеты", "o": "ДВ", "p": "125 гр.", "c": "2765"}, {"n": "Икра Кеты", "o": "Красное золото", "p": "100 гр.", "c": "2000"}, {"n": "Икра Горбуши", "o": "Красное золото", "p": "100 гр.", "c": "1960"}, {"n": "Икра Горбуши", "o": "Красное золото", "p": "200 гр.", "c": "3920"}, {"n": "Икра Горбуши", "o": "Красное золото", "p": "400 гр.", "c": "8975"}, {"n": "Икра Горбуши", "o": "Красное золото", "p": "500 гр.", "c": "9800"}, {"n": "Икра Морского ежа", "o": "ДВ", "p": "1 кг.", "c": "3000"}, {"n": "Икра Сельди 120г.", "o": "РФ", "p": "1/28", "c": "125/110"}, {"n": "Икра Щуки 0,5 кг.", "o": "РФ", "p": "1/20", "c": "3315"}, {"n": "Печень Трески", "o": "РФ", "p": "120гр", "c": "420"}, {"n": "Печень Трески", "o": "РФ", "p": "230гр", "c": "940"}], "updated": "2026-11-03"}], ["08-polar", {"title": "Полуфабрикаты в панировке", "order": 7, "items": [{"n": "Кольца Кальмара в панировке", "o": "Polar", "p": "6*500", "c": "667"}, {"n": "Грибочки с грибами и сыром", "o": "Polar", "p": "1*5", "c": "323"}, {"n": "Котлеты Рыбные", "o": "Polar", "p": "1*5", "c": "243"}, {"n": "Котлеты из филе в картофельной шубе", "o": "Polar", "p": "1*5", "c": "460"}, {"n": "Котлеты Рыбные в кляре", "o": "Polar", "p": "1*5", "c": "270"}, {"n": "Наггетсы рыбные", "o": "Polar", "p": "6*300", "c": "143"}, {"n": "Рыбки с сыром", "o": "Polar", "p": "1*5", "c": "369"}, {"n": "Рыбки с сыром", "o": "Polar", "p": "6*375", "c": "143"}, {"n": "Треугольники Лососевые", "o": "Polar", "p": "1*5", "c": "380"}, {"n": "Треугольники Кальмаровые", "o": "Polar", "p": "1*5", "c": "350"}, {"n": "Фигурки рыбные", "o": "Polar", "p": "1*5", "c": "312"}], "updated": "2026-11-03"}], ["09-dumplings", {"title": "Пельмени, вареники, котлеты", "order": 8, "items": [{"n": "Пельмени свино-говяжьи", "o": "РФ", "p": "2*5", "c": "410"}, {"n": "Вареники картофель, грибы", "o": "РФ", "p": "2*5", "c": "345"}, {"n": "Вареники с картофелем", "o": "РФ", "p": "2*5", "c": "280"}, {"n": "Вареники с капустой", "o": "РФ", "p": "2*5", "c": "335"}, {"n": "Вареники с творогом", "o": "РФ", "p": "2*5", "c": "380"}, {"n": "Пельмени Горбуша", "o": "РФ", "p": "9*1", "c": "488/468"}, {"n": "Пельмени Форель", "o": "РФ", "p": "10*400", "c": "315/295"}, {"n": "Пельмени Щука", "o": "РФ", "p": "9*1", "c": "467/447"}, {"n": "Котлеты Щука", "o": "РФ", "p": "7*800", "c": "477/457"}, {"n": "Котлеты Судака", "o": "РФ", "p": "7*800", "c": "510/490"}, {"n": "Котлеты Форель", "o": "РФ", "p": "7*800", "c": "400/380"}], "updated": "2026-11-03"}], ["10-meat", {"title": "Мясо", "order": 9, "items": [{"n": "Головы ЦБ", "o": "Ресурс", "p": "эл.вес", "c": "95"}, {"n": "Бедро лоток", "o": "Ресурс", "p": "1*15", "c": "", "note": "цены нет в прайсе, уточнить"}, {"n": "Бедро", "o": "Ресурс", "p": "1*12", "c": "225"}, {"n": "Желудки Благояр Лоток", "o": "Ресурс", "p": "1*9", "c": "216"}, {"n": "Окорочок ЦБ с хребтом", "o": "Ресурс", "p": "1*15", "c": "230"}, {"n": "Печень ЦБ Лоток", "o": "Ресурс", "p": "10*0,9", "c": "285"}, {"n": "Сердце ЦБ лоток", "o": "Ресурс", "p": "10*0,9", "c": "350"}, {"n": "Тушка 1,8 кг.", "o": "Ресурс", "p": "эл.вес", "c": "276"}, {"n": "Филе Бедра Лоток", "o": "Ресурс", "p": "эл.вес", "c": "430"}, {"n": "Филе Грудки лоток", "o": "Ресурс", "p": "эл.вес", "c": "509"}, {"n": "Филе Грудки", "o": "Ресурс", "p": "1*15", "c": "495"}, {"n": "Части бедра и голени", "o": "Ресурс", "p": "эл.вес", "c": "104"}, {"n": "Шея", "o": "Ресурс", "p": "1*15", "c": "95"}, {"n": "Карбонат", "o": "Мираторг", "p": "эл.вес", "c": "440"}, {"n": "Окорок", "o": "Мираторг", "p": "эл.вес", "c": "420"}, {"n": "Шея свиная", "o": "Мираторг", "p": "эл.вес", "c": "540"}, {"n": "Вырезка свиная", "o": "Мираторг", "p": "эл.вес", "c": "513"}], "updated": "2026-11-03"}]]},STAMP="2026-11-03",KEY="rb-offline-v1";
+var store;try{store=JSON.parse(localStorage.getItem(KEY)||"null")}catch(e){}
+if(!store||store.stamp!==STAMP){var old=store;store={stamp:STAMP,docs:{}};
+ Object.keys(SEED).forEach(function(c){SEED[c].forEach(function(p){store.docs[c+"/"+p[0]]=p[1]})});
+ if(old&&old.docs)Object.keys(old.docs).forEach(function(k){if(k.indexOf("checks/")===0)store.docs[k]=old.docs[k]});}
+var subs=[];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}subs.forEach(function(f){f()})}
+function snapDoc(path){var d=store.docs[path];return{id:path.split("/").pop(),exists:!!d,data:function(){return d},metadata:{fromCache:false,hasPendingWrites:false}}}
+function docRef(path){return{id:path.split("/").pop(),path:path,
+ get:function(){return Promise.resolve(snapDoc(path))},
+ set:function(v){store.docs[path]=JSON.parse(JSON.stringify(v));save();return Promise.resolve()},
+ update:function(v){var d=store.docs[path];if(!d)return Promise.reject({code:"invalid_argument"});Object.assign(d,JSON.parse(JSON.stringify(v)));save();return Promise.resolve()},
+ delete:function(){delete store.docs[path];save();return Promise.resolve()},
+ onSnapshot:function(f){var g=function(){f(snapDoc(path))};subs.push(g);setTimeout(g,0);return function(){subs=subs.filter(function(x){return x!==g})}},
+ collection:function(n){return collRef(path+"/"+n)}}}
+function collRef(c){return{path:c,
+ doc:function(id){return docRef(c+"/"+(id||("loc"+Date.now().toString(36)+Math.random().toString(36).slice(2,6))))},
+ onSnapshot:function(f){var g=function(){var docs=Object.keys(store.docs).filter(function(k){return k.indexOf(c+"/")===0&&k.split("/").length===c.split("/").length+1}).sort().map(snapDoc);f({docs:docs,size:docs.length,empty:!docs.length,metadata:{fromCache:false,hasPendingWrites:false}})};subs.push(g);setTimeout(g,0);return function(){subs=subs.filter(function(x){return x!==g})}}}}
+var db={doc:docRef,collection:collRef};
+window.claude={use:function(n){return Promise.resolve(n==="db"?db:null)}};
+})();
+</script></head><body><title>Клиенты Робинзон</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky header, client roster on the left, client card on the right; stacks to one column on phones */
+:root{
+  --bg:#eef3f5; --surface:#ffffff; --sunk:#e3eaee; --line:#cfdae0;
+  --fg:#12232e; --muted:#5b6f7b; --accent:#0e6f8a; --accent-soft:#d6ecf2;
+  --ok:#2f7d4f; --ok-soft:#dcf0e3; --warn:#a4580f; --warn-soft:#f8e7d4; --no:#a23b3b; --no-soft:#f6dede;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c161c; --surface:#13212a; --sunk:#0f1c24; --line:#22343f;
+  --fg:#e3edf2; --muted:#8ea3af; --accent:#5cc3df; --accent-soft:#163542;
+  --ok:#74c995; --ok-soft:#173326; --warn:#e7a35f; --warn-soft:#3a2a17; --no:#ec8b8b; --no-soft:#3a1d1f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c161c; --surface:#13212a; --sunk:#0f1c24; --line:#22343f;
+  --fg:#e3edf2; --muted:#8ea3af; --accent:#5cc3df; --accent-soft:#163542;
+  --ok:#74c995; --ok-soft:#173326; --warn:#e7a35f; --warn-soft:#3a2a17; --no:#ec8b8b; --no-soft:#3a1d1f; color-scheme:dark}
+html,body{background:var(--bg);color:var(--fg)}
+body{font-family:var(--f-body);font-size:15px;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;padding-block:14px}
+h1{font-family:var(--f-display);font-weight:700;font-size:1.25rem;letter-spacing:.01em;margin:0;text-wrap:balance}
+h1 span{color:var(--accent)}
+.stats{display:flex;gap:20px;margin-left:auto;font-variant-numeric:tabular-nums}
+.stat b{display:block;font-family:var(--f-display);font-size:1.1rem;font-weight:500}
+.stat small{color:var(--muted);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+main .wrap{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:20px;padding-block:20px 40px}
+@media (max-width:760px){main .wrap{grid-template-columns:1fr}}
+.roster{display:flex;flex-direction:column;gap:10px;min-width:0}
+.search{width:100%;box-sizing:border-box;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg)}
+.search:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.list{display:flex;flex-direction:column;gap:6px}
+.item{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 12px;border-radius:8px;border:1px solid transparent}
+.item:hover{background:var(--sunk)}
+.item:focus-visible{outline:2px solid var(--accent)}
+.item[aria-current="true"]{background:var(--surface);border-color:var(--line)}
+.item .nm{font-weight:600;min-width:0;overflow-wrap:anywhere}
+.item .pt{grid-column:1;color:var(--muted);font-size:.85rem;min-width:0;overflow-wrap:anywhere}
+.item .dy{grid-row:1/3;grid-column:2;align-self:center;font-family:var(--f-mono);font-size:.75rem;color:var(--accent);text-align:right;white-space:nowrap;max-width:90px;overflow:hidden;text-overflow:ellipsis}
+.chip{display:inline-flex;align-items:center;gap:4px;font-size:.78rem;padding:3px 9px;border-radius:999px;background:var(--sunk);color:var(--fg)}
+.chip.ok{background:var(--ok-soft);color:var(--ok)}
+.chip.no{background:var(--no-soft);color:var(--no)}
+.chip.offer{background:var(--accent-soft);color:var(--accent)}
+.chip.warn{background:var(--warn-soft);color:var(--warn)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;min-width:0;display:flex;flex-direction:column;gap:22px}
+.card h2{font-family:var(--f-display);font-weight:500;font-size:1.35rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin-top:4px}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px 20px;margin:0}
+.facts div{min-width:0}
+.facts dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.facts dd{margin:2px 0 0;overflow-wrap:anywhere}
+.mono{font-family:var(--f-mono);font-size:.9em}
+h3{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:980px){.three{grid-template-columns:1fr}}
+.notes{background:var(--sunk);border-radius:8px;padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.calls{display:flex;flex-direction:column;gap:0}
+.call{display:grid;grid-template-columns:92px 1fr;gap:4px 16px;padding:14px 0;border-top:1px solid var(--line)}
+.call:first-child{border-top:0;padding-top:0}
+.call time{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);padding-top:2px}
+.call .body{min-width:0;display:flex;flex-direction:column;gap:8px}
+.call p{margin:0}
+.orders{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}
+.orders td{padding:4px 0;border-bottom:1px dashed var(--line)}
+.orders td:last-child{text-align:right;font-family:var(--f-mono);white-space:nowrap;padding-left:12px}
+.next{color:var(--accent);font-weight:500}
+.empty{padding:28px;text-align:left;color:var(--muted)}
+.empty strong{display:block;color:var(--fg);font-family:var(--f-display);font-weight:500;font-size:1.05rem;margin-bottom:6px}
+.example{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--warn);font-weight:600}
+.muted{color:var(--muted)}
+.btn{font:inherit;font-weight:500;font-size:.9rem;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer}
+.btn:hover{background:var(--sunk)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.danger{color:var(--no);border-color:var(--no-soft)}
+.btn.danger.armed{background:var(--no);color:var(--surface);border-color:var(--no)}
+.btn:disabled{opacity:.55;cursor:default}
+.head{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:12px}
+.head>div{min-width:0}
+.toolbar{display:flex;gap:8px}
+.toolbar .search{flex:1;min-width:0}
+form{display:flex;flex-direction:column;gap:18px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px 16px}
+label{display:flex;flex-direction:column;gap:4px;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);min-width:0}
+label.wide{grid-column:1/-1}
+input.f,select.f,textarea.f{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:9px 10px;width:100%;box-sizing:border-box}
+textarea.f{min-height:84px;resize:vertical}
+input.f:focus-visible,select.f:focus-visible,textarea.f:focus-visible{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.hint{font-size:.78rem;color:var(--muted);text-transform:none;letter-spacing:0}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.actions .spacer{flex:1}
+.err{color:var(--no);font-size:.88rem}
+.districts{display:flex;flex-wrap:wrap;gap:6px}
+.dchip{font:inherit;font-size:.82rem;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;font-variant-numeric:tabular-nums}
+.dchip small{color:var(--muted);margin-left:4px}
+.dchip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.dchip[aria-pressed="true"] small{color:inherit;opacity:.7}
+.dchip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.row{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px;border-radius:8px}
+.row.done .item{opacity:.55}
+.row.done .nm{text-decoration:line-through;text-decoration-color:var(--muted)}
+.tick{width:40px;height:40px;display:grid;place-items:center;cursor:pointer;border-radius:8px}
+.tick:hover{background:var(--sunk)}
+.tick input{appearance:none;-webkit-appearance:none;margin:0;width:22px;height:22px;border:2px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;display:grid;place-items:center}
+.tick input:checked{background:var(--ok);border-color:var(--ok)}
+.tick input:checked::after{content:"";width:6px;height:11px;border:solid var(--surface);border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.tick input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.progress{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:.82rem;color:var(--muted)}
+.progress button{all:unset;cursor:pointer;color:var(--accent);font-size:.82rem}
+.progress button:focus-visible{outline:2px solid var(--accent)}
+.tabs{display:flex;gap:4px;background:var(--sunk);padding:3px;border-radius:9px}
+.tab{font:inherit;font-weight:500;font-size:.9rem;padding:6px 14px;border:0;border-radius:7px;background:transparent;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tab:focus-visible{outline:2px solid var(--accent)}
+.pview{display:flex;flex-direction:column;gap:14px;padding-block:20px 40px}
+.pbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pbar .search{flex:1 1 260px;width:auto}
+.pcat{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pcat h2{font-family:var(--f-display);font-weight:500;font-size:1rem;margin:0;padding:12px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px}
+.pcat h2 small{font-family:var(--f-body);font-size:.8rem;color:var(--muted);font-weight:400}
+.tw{overflow-x:auto}
+.ptable{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:.92rem}
+.ptable th{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;text-align:left;padding:8px 16px;background:var(--sunk)}
+.ptable td{padding:7px 16px;border-top:1px solid var(--line);vertical-align:top}
+.ptable tr:first-child td{border-top:0}
+.ptable .pr{text-align:right;font-family:var(--f-mono);font-weight:500;white-space:nowrap}
+.ptable th.pr{text-align:right}
+.ptable .og,.ptable .pk{color:var(--muted);white-space:nowrap}
+.ptable .pk{font-family:var(--f-mono);font-size:.85em}
+.ptable .nt{display:block;font-size:.78rem;color:var(--warn)}
+.ptable .pr small{font-family:var(--f-body);font-weight:400;font-size:.72rem;color:var(--muted);margin-left:3px}
+.ptable .pr .box{display:block;color:var(--ok)}
+.legend{font-size:.82rem;color:var(--muted)}
+@media (max-width:560px){.ptable .og{display:none}.ptable td,.ptable th{padding-inline:10px}}
+</style>
+
+<div style="background:var(--warn-soft);color:var(--warn);font-size:.8rem;padding:6px max(16px,env(safe-area-inset-left,0px));text-align:center">Офлайн-копия от 03.11.2026. Ваши правки и галочки сохраняются только на этом телефоне.</div><header><div class="wrap">
+  <h1>Робинзон</h1>
+  <div class="tabs" role="tablist"><button class="tab" role="tab" id="t-clients" aria-selected="true">Клиенты</button><button class="tab" role="tab" id="t-price" aria-selected="false">Прайс</button></div>
+  <div class="stats">
+    <div class="stat"><b id="s-clients">—</b><small>клиентов</small></div>
+    <div class="stat"><b id="s-called">—</b><small>обзвонил сегодня</small></div>
+  </div>
+</div></header>
+
+<main id="view-clients"><div class="wrap">
+  <section class="roster">
+    <div class="toolbar">
+      <input id="q" class="search" type="search" placeholder="Поиск: имя, точка, товар" aria-label="Поиск по клиентам">
+      <button id="add" class="btn primary" type="button" disabled>+ Клиент</button>
+    </div>
+    <div id="districts" class="districts" role="group" aria-label="Квартал"></div>
+    <div id="progress" class="progress"></div>
+    <div id="list" class="list"></div>
+  </section>
+  <section id="detail" class="card">
+    <div class="empty"><strong>Загружаю базу…</strong>Если ничего не появится, откройте страницу в приложении Claude.</div>
+  </section>
+</div></main>
+<main id="view-price" hidden><div class="wrap pview">
+  <div class="pbar">
+    <input id="pq" class="search" type="search" placeholder="Поиск по прайсу: хек, Polar, Китай…" aria-label="Поиск по прайсу">
+  </div>
+  <div id="pcats" class="districts" role="group" aria-label="Раздел прайса"></div>
+  <div class="legend">Где две цены: верхняя при поштучной покупке, зелёная при покупке целой коробки.</div>
+  <div id="plist" style="display:flex;flex-direction:column;gap:14px"><div class="empty"><strong>Загружаю прайс…</strong></div></div>
+</div></main>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const DAYS=["воскресенье","понедельник","вторник","среда","четверг","пятница","суббота"];
+let clients=[],calls=[],sel=null,query="";
+const fmtDate=iso=>{if(!iso)return"";const d=new Date(iso);return isNaN(d)?esc(iso):d.toLocaleDateString("ru-RU",{day:"2-digit",month:"2-digit",year:"2-digit"})};
+const arr=v=>Array.isArray(v)?v:(v?[v]:[]);
+const todayName=DAYS[new Date().getDay()];
+const ordersToday=c=>String(c.orderDays||"").toLowerCase().includes(todayName.slice(0,3));
+
+const DISTRICTS=["Южный","Степной","Юбилейный","Мирный"];
+let district="";try{district=localStorage.getItem("rb-district")||""}catch(e){}
+if(district&&!DISTRICTS.includes(district))district="";
+const pad=n=>String(n).padStart(2,"0");
+const now=new Date();
+const todayKey=`${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
+let checked={};let writeChain=Promise.resolve();
+const inDistrict=c=>!district||c.district===district;
+
+function renderStats(){
+  const pool=clients.filter(inDistrict);
+  $("#s-clients").textContent=pool.length;
+  $("#s-called").textContent=`${pool.filter(c=>checked[c.id]).length}/${pool.length}`;
+}
+function renderDistricts(){
+  const cnt=d=>clients.filter(c=>!d||c.district===d).length;
+  $("#districts").innerHTML=[["","Все"],...DISTRICTS.map(d=>[d,d])].map(([v,l])=>
+    `<button type="button" class="dchip" data-d="${esc(v)}" aria-pressed="${district===v}">${l}<small>${cnt(v)}</small></button>`).join("");
+}
+function matches(c){
+  if(!inDistrict(c))return false;
+  if(!query)return true;
+  const hay=[c.name,c.contact,c.owner,c.phone,c.ownerPhone,c.point,c.address,c.district,c.format,...arr(c.usual),...arr(c.toOffer)].join(" ").toLowerCase();
+  return hay.includes(query);
+}
+function shortDays(s){s=String(s||"").toLowerCase();const m=[["пн",/пн|понед/],["вт",/вт(?!ор)|вторн/],["ср",/сред|ср\b/],["чт",/четв|чт\b/],["пт",/пт|пятн/],["сб",/субб|сб\b/]].filter(x=>x[1].test(s)).map(x=>x[0]);return m.join(", ")}
+function renderList(){
+  renderDistricts();
+  const L=$("#list"),P=$("#progress");
+  const pool=clients.filter(inDistrict),done=pool.filter(c=>checked[c.id]).length;
+  P.innerHTML=pool.length?`<span>Сегодня ${now.toLocaleDateString("ru-RU",{day:"numeric",month:"long"})}: обзвонил ${done} из ${pool.length}</span>${done?'<button type="button" id="reset">Снять все</button>':""}`:"";
+  const shown=clients.filter(matches).sort((a,b)=>(!!checked[a.id]-!!checked[b.id])||(ordersToday(b)-ordersToday(a))||String(a.point||a.name).localeCompare(String(b.point||b.name),"ru"));
+  if(!clients.length){L.innerHTML='<div class="empty"><strong>Пока пусто</strong>Нажмите «+ Клиент» или пришлите Claude запись звонка.</div>';return}
+  if(!shown.length){L.innerHTML=`<div class="empty">${district&&!query?`В квартале ${esc(district)} пока нет клиентов.`:"Ничего не нашлось."}</div>`;return}
+  L.innerHTML=shown.map(c=>`<div class="row${checked[c.id]?" done":""}">
+    <label class="tick" title="Позвонил сегодня"><input type="checkbox" data-check="${esc(c.id)}" ${checked[c.id]?"checked":""} ${dbRef?"":"disabled"} aria-label="Позвонил сегодня: ${esc(c.point||c.name)}"></label>
+    <button class="item" data-id="${esc(c.id)}" aria-current="${c.id===sel}">
+    <span class="nm">${esc(c.point||c.name)}${c.discount?` <span class="chip warn">скидка ${esc(c.discount)}</span>`:""}</span>
+    <span class="dy">${ordersToday(c)?'<span class="chip ok">сегодня</span>':esc(shortDays(c.orderDays))}</span>
+    <span class="pt">${esc([c.district&&!district?c.district:"",c.contact||c.name||""].filter(Boolean).join(" · "))}${c.example?' · пример':''}</span></button></div>`).join("");
+}
+function saveChecks(next){
+  checked=next;renderStats();renderList();
+  const ids={};for(const k in next)if(next[k])ids[k]=true;
+  writeChain=writeChain.then(()=>dbRef.doc("checks/"+todayKey).set({date:todayKey,ids})).catch(e=>console.warn(e));
+}
+$("#list").addEventListener("change",e=>{const id=e.target.dataset.check;if(!id||!dbRef)return;saveChecks({...checked,[id]:e.target.checked})});
+$("#progress").addEventListener("click",e=>{if(e.target.id!=="reset")return;
+  const b=e.target;if(b.dataset.armed){const n={...checked};clients.filter(inDistrict).forEach(c=>delete n[c.id]);saveChecks(n)}else{b.dataset.armed="1";b.textContent="Точно снять?"}});
+$("#districts").addEventListener("click",e=>{const b=e.target.closest(".dchip");if(!b)return;district=b.dataset.d;try{localStorage.setItem("rb-district",district)}catch(x){}renderStats();renderList()});
+function chips(list,cls,empty){
+  const a=arr(list);
+  return a.length?`<div class="chips">${a.map(x=>`<span class="chip ${cls}">${esc(x)}</span>`).join("")}</div>`:`<span class="muted">${empty}</span>`;
+}
+function renderDetail(){
+  const D=$("#detail");
+  const c=clients.find(x=>x.id===sel);
+  if(!c){D.innerHTML=clients.length?'<div class="empty"><strong>Выберите клиента</strong>Слева список точек, сверху те, у кого сегодня день заказа.</div>':'<div class="empty"><strong>База готова</strong>После каждого звонка присылайте запись в чат. Claude заполнит карточку: кто это, какая точка, когда заказывают, что берут, от чего отказались и что стоит предложить.</div>';return}
+  const cc=calls.filter(k=>k.clientId===c.id).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  const facts=[["Квартал",c.district],["Контакт на точке",c.contact],["Телефон точки",c.phone,"mono"],["Владелец",c.owner],["Телефон владельца",c.ownerPhone,"mono"],["Связь",c.messenger],["Формат",c.format],["Адрес",c.address],["День заказа",c.orderDays],["Приёмка",c.deliveryWindow],["Оплата",c.payment],["Скидка",c.discount],["Документы",c.docs],["Последний звонок",fmtDate(c.lastCall)]].filter(f=>f[1]);
+  D.innerHTML=`
+  <div class="head"><div>
+    <h2>${esc(c.point||c.name)}</h2>
+    <div class="sub">${esc([c.name&&c.name!==c.point?c.name:"",c.status].filter(Boolean).join(" · "))}</div></div>
+    ${dbRef?'<button id="edit" class="btn" type="button">Изменить</button>':''}</div>
+  ${facts.length?`<dl class="facts">${facts.map(f=>`<div><dt>${f[0]}</dt><dd class="${f[2]||""}">${esc(f[1])}</dd></div>`).join("")}</dl>`:""}
+  <div class="three">
+    <div><h3>Обычно берёт</h3>${chips(c.usual,"ok","пока неизвестно")}</div>
+    <div><h3>Отказался</h3>${chips(c.declined,"no","отказов не было")}</div>
+    <div><h3>Предложить</h3>${chips(c.toOffer,"offer","появится после прайса")}</div>
+  </div>
+  ${c.notes?`<div><h3>Заметки</h3><div class="notes">${esc(c.notes)}</div></div>`:""}
+  <div><h3>Звонки</h3>${cc.length?`<div class="calls">${cc.map(k=>`<article class="call"><time>${fmtDate(k.date)}</time><div class="body">
+    ${k.summary?`<p>${esc(k.summary)}</p>`:""}
+    ${arr(k.ordered).length?`<table class="orders">${arr(k.ordered).map(o=>`<tr><td>${esc(o.item??o)}</td><td>${esc(o.qty??"")}</td></tr>`).join("")}</table>`:""}
+    ${arr(k.declined).length?`<div class="chips">${arr(k.declined).map(x=>`<span class="chip no">не взял: ${esc(x)}</span>`).join("")}</div>`:""}
+    ${arr(k.offered).length?`<div class="chips">${arr(k.offered).map(x=>`<span class="chip warn">предложил: ${esc(x)}</span>`).join("")}</div>`:""}
+    ${k.next?`<p class="next">Дальше: ${esc(k.next)}</p>`:""}
+  </div></article>`).join("")}</div>`:'<span class="muted">Звонков пока нет.</span>'}</div>`;
+}
+let dbRef=null,mode="view",readOnly=false;
+const FIELDS=[
+  ["point","Точка (название)"],["name","Юрлицо / ИП"],["contact","Контакт на точке","имя, должность"],["phone","Телефон точки"],["owner","Владелец","имя, отчество"],["ownerPhone","Телефон владельца"],
+  ["messenger","Как связаться"],["format","Формат точки"],["address","Адрес, подъезд"],["orderDays","Дни заказа","например: вторник, пятница"],
+  ["deliveryWindow","Время приёмки"],["payment","Оплата"],["discount","Скидка","например: 5% или 3% на рыбу"],["docs","Документы"]];
+const LISTS=[["usual","Обычно берёт"],["declined","Отказался"],["toOffer","Предложить"]];
+const STATUSES=["новый","активный","пауза","не работаем"];
+
+function renderAll(){renderStats();renderList();if(mode==="view")renderDetail()}
+function renderForm(c){
+  const D=$("#detail"),isNew=!c;c=c||{};
+  D.innerHTML=`<form id="cf" novalidate>
+    <div class="head"><div><h2>${isNew?"Новый клиент":"Изменить: "+esc(c.point||c.name)}</h2>
+      <div class="sub">Списки через запятую. Пустые поля можно оставить.</div></div></div>
+    <div class="fgrid">
+      ${FIELDS.map(([k,l,h])=>`<label for="f-${k}">${l}<input class="f" id="f-${k}" name="${k}" value="${esc(c[k]||"")}" ${h?`placeholder="${esc(h)}"`:""}></label>`).join("")}
+      <label for="f-district">Квартал<select class="f" id="f-district" name="district"><option value="">не указан</option>${DISTRICTS.map(d=>`<option ${d===(c.district||(isNew?district:""))?"selected":""}>${d}</option>`).join("")}</select></label>
+      <label for="f-status">Статус<select class="f" id="f-status" name="status">${STATUSES.map(s=>`<option ${s===(c.status||"новый")?"selected":""}>${s}</option>`).join("")}</select></label>
+    </div>
+    <div class="fgrid">
+      ${LISTS.map(([k,l])=>`<label for="f-${k}" class="wide">${l}<input class="f" id="f-${k}" name="${k}" value="${esc(arr(c[k]).join(", "))}"></label>`).join("")}
+      <label for="f-notes" class="wide">Заметки<textarea class="f" id="f-notes" name="notes">${esc(c.notes||"")}</textarea></label>
+    </div>
+    <div class="actions">
+      <button class="btn primary" type="submit" id="save">Сохранить</button>
+      <button class="btn" type="button" id="cancel">Отмена</button>
+      <span class="spacer"></span>
+      ${isNew?"":'<button class="btn danger" type="button" id="del">Удалить клиента</button>'}
+    </div>
+    <div class="err" id="ferr" hidden></div>
+  </form>`;
+  const f=$("#cf"),err=$("#ferr");
+  const fail=m=>{err.textContent=m;err.hidden=false;f.querySelectorAll("button").forEach(b=>b.disabled=false)};
+  $("#cancel").onclick=()=>{mode="view";renderDetail()};
+  f.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const fd=new FormData(f),data={};
+    for(const [k] of FIELDS)data[k]=String(fd.get(k)||"").trim();
+    data.status=fd.get("status");data.district=String(fd.get("district")||"");
+    for(const [k] of LISTS)data[k]=String(fd.get(k)||"").split(/[,;]\s+|;|\n/).map(s=>s.trim()).filter(Boolean);
+    data.notes=String(fd.get("notes")||"").trim();
+    if(!data.point&&!data.name){fail("Укажите хотя бы название точки.");$("#f-point").focus();return}
+    data.updatedAt=new Date().toISOString();
+    f.querySelectorAll("button").forEach(b=>b.disabled=true);$("#save").textContent="Сохраняю…";
+    try{
+      if(isNew){const ref=dbRef.collection("clients").doc();await ref.set(data);sel=ref.id}
+      else{data.example=false;await dbRef.doc("clients/"+c.id).update(data)}
+      mode="view";renderAll();renderDetail();
+    }catch(x){$("#save").textContent="Сохранить";fail(x&&x.code==="invalid_argument"?"Нет прав на изменение этой базы.":"Не удалось сохранить, проверьте связь и попробуйте ещё раз.")}
+  });
+  const del=$("#del");
+  if(del){let armed=false;del.onclick=async()=>{
+    if(!armed){armed=true;del.classList.add("armed");del.textContent="Точно удалить?";setTimeout(()=>{if(armed&&del.isConnected){armed=false;del.classList.remove("armed");del.textContent="Удалить клиента"}},4000);return}
+    f.querySelectorAll("button").forEach(b=>b.disabled=true);
+    try{await dbRef.doc("clients/"+c.id).delete();sel=null;mode="view";renderAll();renderDetail()}
+    catch(x){fail("Не удалось удалить, попробуйте ещё раз.")}
+  }}
+  (isNew?$("#f-point"):null)?.focus();
+}
+$("#detail").addEventListener("click",e=>{if(e.target.id==="edit"){mode="edit";renderForm(clients.find(x=>x.id===sel))}});
+$("#add").addEventListener("click",()=>{mode="new";renderForm(null);if(innerWidth<760)$("#detail").scrollIntoView({behavior:"smooth"})});
+$("#list").addEventListener("click",e=>{const b=e.target.closest(".item");if(!b)return;sel=b.dataset.id;mode="view";renderList();renderDetail();if(innerWidth<760)$("#detail").scrollIntoView({behavior:"smooth"})});
+$("#q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();renderList()});
+
+let price=[],pcat="",pq="";
+function setTab(t){const p=t==="price";$("#view-clients").hidden=p;$("#view-price").hidden=!p;$("#t-clients").setAttribute("aria-selected",!p);$("#t-price").setAttribute("aria-selected",p);document.querySelector(".stats").hidden=p;try{localStorage.setItem("rb-tab",t)}catch(e){}}
+$("#t-clients").onclick=()=>setTab("clients");$("#t-price").onclick=()=>setTab("price");
+try{if(localStorage.getItem("rb-tab")==="price")setTab("price")}catch(e){}
+function priceCell(c){const s=String(c??"");if(!s.includes("/"))return esc(s);const [a,b]=s.split("/");return `${esc(a)}<small>шт.</small><span class="box">${esc(b)}<small>коробка</small></span>`}
+function renderPrice(){
+  const total=price.reduce((s,c)=>s+arr(c.items).length,0);
+  $("#pcats").innerHTML=[["","Все",total],...price.map(c=>[c.id,c.title,arr(c.items).length])].map(([v,l,n])=>`<button type="button" class="dchip" data-c="${esc(v)}" aria-pressed="${pcat===v}">${esc(l)}<small>${n}</small></button>`).join("");
+  const words=pq.split(/\s+/).filter(Boolean);
+  const hit=it=>words.every(w=>[it.n,it.o,it.p].join(" ").toLowerCase().includes(w));
+  const out=price.filter(c=>!pcat||c.id===pcat).map(c=>({...c,rows:arr(c.items).filter(hit)})).filter(c=>c.rows.length);
+  if(!price.length){$("#plist").innerHTML='<div class="empty"><strong>Прайс пока пуст</strong>Пришлите Claude фото прайса.</div>';return}
+  if(!out.length){$("#plist").innerHTML='<div class="empty">Ничего не нашлось.</div>';return}
+  $("#plist").innerHTML=out.map(c=>`<section class="pcat"><h2>${esc(c.title)}<small>${c.rows.length} поз.</small></h2><div class="tw"><table class="ptable"><thead><tr><th>Товар</th><th class="og">Произв.</th><th>Фасовка</th><th class="pr">Цена, ₽</th></tr></thead><tbody>${c.rows.map(it=>`<tr><td>${esc(it.n)}${it.note?`<span class="nt">${esc(it.note)}</span>`:""}</td><td class="og">${esc(it.o)}</td><td class="pk">${esc(it.p)}</td><td class="pr">${priceCell(it.c)}</td></tr>`).join("")}</tbody></table></div></section>`).join("");
+}
+$("#pcats").addEventListener("click",e=>{const b=e.target.closest(".dchip");if(!b)return;pcat=b.dataset.c;renderPrice()});
+$("#pq").addEventListener("input",e=>{pq=e.target.value.trim().toLowerCase();renderPrice()});
+
+(async()=>{
+  const db=await claude.use("db");
+  if(db)db.collection("price").onSnapshot(s=>{price=s.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>(a.order??0)-(b.order??0));renderPrice()},e=>console.warn(e));
+  if(!db){$("#detail").innerHTML='<div class="empty"><strong>База недоступна</strong>Откройте страницу, войдя в свой аккаунт Claude.</div>';renderList();return}
+  dbRef=db;$("#add").disabled=false;
+  db.doc("checks/"+todayKey).onSnapshot(s=>{if(s.metadata.hasPendingWrites)return;const ids=(s.exists&&s.data().ids)||{};checked={...ids};renderStats();renderList()},e=>console.warn(e));
+  db.collection("clients").onSnapshot(s=>{clients=s.docs.map(d=>({id:d.id,...d.data()}));if(sel&&!clients.some(c=>c.id===sel)){sel=null;mode="view"}if(!sel&&clients.length===1)sel=clients[0].id;renderAll()},e=>console.warn(e));
+  db.collection("calls").onSnapshot(s=>{calls=s.docs.map(d=>({id:d.id,...d.data()}));renderAll()},e=>console.warn(e));
+})();
+renderAll();
+</script>
+</body></html>
