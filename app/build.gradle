@@ -6,8 +6,18 @@ android {
         applicationId "ru.robinzon.app"
         minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode((System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInteger() + 100)
+        versionName "1." + (System.getenv("GITHUB_RUN_NUMBER") ?: "0")
     }
+    // Постоянный отладочный ключ: все сборки подписаны одинаково, обновления ставятся поверх.
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+    buildTypes { debug { signingConfig signingConfigs.debug } }
     compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
 }
