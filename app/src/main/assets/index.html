@@ -269,6 +269,8 @@ input.f:focus-visible,select.f:focus-visible,textarea.f:focus-visible{outline:2p
   .ostep .qty{width:44px}
 }
 .pview>*,#oedit{min-width:0;max-width:100%}
+.otext{margin:0;white-space:pre-wrap;overflow-wrap:anywhere;font-family:var(--f-body);font-size:1rem;line-height:1.55;background:var(--sunk);border-radius:10px;padding:14px 16px;color:var(--fg)}
+.oview .sub .chip{font-size:.72rem;padding:1px 8px;vertical-align:1px}
 </style>
 
 <div style="background:var(--warn-soft);color:var(--warn);font-size:.8rem;padding:6px max(16px,env(safe-area-inset-left,0px));text-align:center">Данные от 04.11.2026. Заявки, галочки и правки хранятся на этом телефоне.</div><header><div class="wrap">
@@ -464,7 +466,7 @@ $("#detail").addEventListener("click",async e=>{if(e.target.id==="edit"){mode="e
   if(e.target.id==="cdel"){const b=e.target;if(!b.classList.contains("armed")){b.classList.add("armed");b.textContent="Точно удалить?";setTimeout(()=>{if(b.isConnected){b.classList.remove("armed");b.textContent="Удалить"}},4000);return}
     try{await dbRef.doc("clients/"+sel).delete();sel=null;mode="view";renderAll();toast("Клиент удалён")}catch(x){toast("Не удалось удалить, попробуйте ещё раз")}}
   const d=e.target.closest("[data-odel]");if(d&&mode==="view"){delOrderBtn(d);return}
-  const o=e.target.closest("[data-order]");if(o&&mode==="view")openOrder(o.dataset.order,null,"detail")});
+  const o=e.target.closest("[data-order]");if(o&&mode==="view")viewOrder(o.dataset.order,"detail")});
 $("#add").addEventListener("click",()=>{mode="new";renderForm(null);if(innerWidth<760)$("#detail").scrollIntoView({behavior:"smooth"})});
 $("#list").addEventListener("click",e=>{const b=e.target.closest(".item");if(!b)return;sel=b.dataset.id;mode="view";renderList();renderDetail();if(innerWidth<760)$("#detail").scrollIntoView({behavior:"smooth"})});
 $("#q").addEventListener("input",e=>{query=e.target.value.trim().toLowerCase();renderList()});
@@ -537,7 +539,7 @@ async function delOrderBtn(b){
 $("#olist").addEventListener("click",e=>{
   const del=e.target.closest("[data-odel]");if(del){delOrderBtn(del);return}
   const sd=e.target.closest("[data-sendday]");if(sd){const list=orders.filter(o=>(o.date||"")===sd.dataset.sendday).sort((a,b)=>whoOf(a).localeCompare(whoOf(b),"ru"));shareText(list.map(orderText).join("\n\n— — —\n\n"));return}
-  const o=e.target.closest("[data-order]");if(!o)return;openOrder(o.dataset.order,null,"oedit");
+  const o=e.target.closest("[data-order]");if(!o)return;viewOrder(o.dataset.order,"oedit");
 });
 $("#onew").addEventListener("click",()=>{if(dbRef)openOrder(null,null,"oedit")});
 
@@ -570,6 +572,31 @@ function openOrder(id,clientId,host){
   if(ohost==="detail")mode="order";
   renderOrderForm();
   const h=ohost==="oedit"?$("#oedit"):$("#detail");if(innerWidth<760||ohost==="oedit")h.scrollIntoView({behavior:"smooth",block:"start"});
+}
+function viewOrder(idOrObj,host){
+  const o=typeof idOrObj==="string"?orders.find(x=>x.id===idOrObj):idOrObj;if(!o)return;
+  closeOrder(false);
+  ohost=host||"detail";if(ohost==="detail")mode="order";
+  draft=null;
+  const D=ohost==="oedit"?$("#oedit"):$("#detail");D.hidden=false;
+  const n=arr(o.items).length;
+  D.innerHTML=`<div id="ordform" class="ordform oview">
+    <div class="head"><div><h2>${esc(whoOf(o))}</h2>
+      <div class="sub">${esc(dayLabel(o.date))} · ${n} ${n===1?"позиция":n>1&&n<5?"позиции":"позиций"} · <span class="chip ${o.status==="отправлена"?"ok":"warn"}">${esc(o.status||"черновик")}</span></div></div>
+      <div class="hbtns"><button class="btn" type="button" id="v-close">Закрыть</button></div></div>
+    <pre class="otext">${esc(orderText(o))}</pre>
+    <div class="actions">
+      <button class="btn primary" type="button" id="v-send">Отправить</button>
+      <button class="btn" type="button" id="v-edit">Изменить</button>
+      <span class="spacer"></span>
+      <button class="btn danger" type="button" id="v-del">Удалить</button>
+    </div></div>`;
+  $("#v-close").onclick=()=>closeOrder(false);
+  $("#v-edit").onclick=()=>openOrder(o.id,null,ohost);
+  $("#v-send").onclick=async()=>{const ok=await shareText(orderText(o));if(ok&&o.status!=="отправлена"){try{await dbRef.doc("orders/"+o.id).update({status:"отправлена",updatedAt:new Date().toISOString()})}catch(x){}}};
+  const del=$("#v-del");let armed=false;del.onclick=async()=>{if(!armed){armed=true;del.classList.add("armed");del.textContent="Точно удалить?";return}
+    try{await dbRef.doc("orders/"+o.id).delete();closeOrder(false);toast("Заявка удалена")}catch(x){toast("Не удалось удалить, попробуйте ещё раз")}};
+  if(innerWidth<760||ohost==="oedit")D.scrollIntoView({behavior:"smooth",block:"start"});
 }
 function closeOrder(silent){
   if(ohost==="oedit"){const h=$("#oedit");h.innerHTML="";h.hidden=true}
@@ -675,8 +702,9 @@ async function saveOrder(send){
   try{
     const ref=draft.id?dbRef.doc("orders/"+draft.id):dbRef.collection("orders").doc();
     await ref.set(body);draft.id=ref.id;Object.assign(draft,body);
-    const ok=send?await shareText(orderText({...body,id:ref.id})):(toast("Заявка сохранена"),true);
-    if(ok)closeOrder(false);
+    const host=ohost,saved={...body,id:ref.id};
+    const ok=send?await shareText(orderText(saved)):(toast("Заявка сохранена"),true);
+    if(ok)viewOrder(saved,host);
   }catch(x){oerr("Не удалось сохранить, попробуйте ещё раз.")}
 }
 
