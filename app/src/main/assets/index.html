@@ -245,6 +245,29 @@ input.f:focus-visible,select.f:focus-visible,textarea.f:focus-visible{outline:2p
 #o-cats .dchip{flex:none}
 .obar{flex-wrap:nowrap}
 .obar-btns{flex-wrap:nowrap}
+.ordform,.ordform *{min-width:0}
+.ordform input.f,.ordform select.f{max-width:100%}
+.obar-sum b{white-space:nowrap}
+.obar-sum small{white-space:nowrap}
+@media (max-width:560px){
+  #detail.card,#oedit{padding:14px 12px!important}
+  .ordform .pcat h2{padding:10px 12px}
+  .oprow{padding:9px 12px}
+  .sbtn{width:38px;height:36px}
+  .ostep .qty{width:50px}
+  .oprow .unit{height:38px}
+}
+@media (max-width:440px){
+  .obar{flex-wrap:wrap;gap:8px;padding:8px 10px}
+  .obar-sum{flex-direction:row;align-items:baseline;justify-content:space-between;width:100%;gap:8px}
+  .obar-btns{width:100%}
+  .obar-btns .btn{flex:1}
+  .oprow .opc{flex-wrap:wrap;gap:6px}
+}
+@media (max-width:340px){
+  .sbtn{width:34px}
+  .ostep .qty{width:44px}
+}
 </style>
 
 <div style="background:var(--warn-soft);color:var(--warn);font-size:.8rem;padding:6px max(16px,env(safe-area-inset-left,0px));text-align:center">Данные от 04.11.2026. Заявки, галочки и правки хранятся на этом телефоне.</div><header><div class="wrap">
