@@ -207,6 +207,44 @@ input.f:focus-visible,select.f:focus-visible,textarea.f:focus-visible{outline:2p
 .otop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .otop h2{font-family:var(--f-display);font-weight:500;font-size:1.1rem;margin:0}
 #oedit{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px}
+.ofields{display:grid;grid-template-columns:1fr 150px;gap:10px}
+@media (max-width:420px){.ofields{grid-template-columns:1fr}}
+.opl{display:flex;flex-direction:column;gap:12px}
+.opr{display:flex;flex-direction:column}
+.oprow{display:grid;grid-template-columns:1fr auto;grid-template-areas:"n p" "c c";gap:4px 10px;padding:9px 14px;border-top:1px solid var(--line);cursor:pointer;-webkit-tap-highlight-color:transparent}
+.opr .oprow:first-child{border-top:0}
+.oprow:hover{background:var(--sunk)}
+.oprow:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.oprow.on{background:var(--accent-soft)}
+.oprow .opn{grid-area:n;min-width:0;overflow-wrap:anywhere;font-weight:500}
+.oprow .opn small{display:block;font-weight:400;font-size:.78rem;color:var(--muted)}
+.oprow .opp{grid-area:p;text-align:right;font-family:var(--f-mono);font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+.oprow .opp small{font-family:var(--f-body);font-weight:400;font-size:.72rem;color:var(--muted);margin-left:3px}
+.oprow .opp .box{display:block;color:var(--ok)}
+.oprow .opc{grid-area:c;display:flex;align-items:center;gap:8px;justify-content:flex-end;min-height:0}
+.oprow:not(.on) .opc{position:absolute;opacity:0;pointer-events:none}
+.oprow:not(.on){position:relative;grid-template-areas:"n p"}
+.oadd{display:none}
+.ostep{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:8px;background:var(--surface);overflow:hidden}
+.sbtn{font:inherit;font-size:1.2rem;width:42px;height:38px;border:0;background:transparent;color:var(--accent);cursor:pointer}
+.sbtn:active{background:var(--sunk)}
+.sbtn:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.ostep .qty{width:58px;border:0;border-inline:1px solid var(--line);text-align:center;font:inherit;font-family:var(--f-mono);color:var(--fg);background:var(--surface)}
+.oprow .unit{font:inherit;height:40px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--fg);padding:0 6px}
+.oprow .osm{margin-right:auto;order:-1;font-family:var(--f-mono);font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dchip.sel{border-color:var(--accent);color:var(--accent)}
+.dchip.sel[aria-pressed="true"]{background:var(--accent);color:var(--surface)}
+.obar{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom,0px));z-index:6;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.obar-sum{display:flex;flex-direction:column;line-height:1.2}
+.obar-sum small{color:var(--muted);font-size:.78rem}
+.obar-sum b{font-family:var(--f-display);font-weight:500;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.obar-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.obar-btns .btn{padding:8px 11px}
+#o-cats{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-2px;padding:2px}
+#o-cats::-webkit-scrollbar{display:none}
+#o-cats .dchip{flex:none}
+.obar{flex-wrap:nowrap}
+.obar-btns{flex-wrap:nowrap}
 </style>
 
 <div style="background:var(--warn-soft);color:var(--warn);font-size:.8rem;padding:6px max(16px,env(safe-area-inset-left,0px));text-align:center">Данные от 04.11.2026. Заявки, галочки и правки хранятся на этом телефоне.</div><header><div class="wrap">
@@ -510,70 +548,91 @@ function closeOrder(silent){
   else if(mode==="order"){mode="view";if(!silent)renderDetail()}
   if(!silent)draft=null;
 }
-let oq="";
+let oq="",ocat="";
+const ikey=it=>[it.n,it.o||"",it.p||"",it.c||""].join("|");
+function lineIdx(k){return draft.items.findIndex(l=>ikey(l)===k)}
 function renderOrderForm(){
   const D=ohost==="oedit"?$("#oedit"):$("#detail");D.hidden=false;
   D.innerHTML=`<div id="ordform" class="ordform">
     <div class="head"><div><h2>${draft.id?"Заявка":"Новая заявка"}</h2>
-      <div class="sub">${draft.id?esc(draft.status||"черновик"):"выберите товары из прайса"}</div></div></div>
-    <label for="o-who">Для кого<input class="f" id="o-who" list="o-clients" autocomplete="off" value="${esc(draft.forWhom||"")}" placeholder="магазин, ИП или имя"></label>
+      <div class="sub">${draft.id?esc(draft.status||"черновик"):"нажмите на товар, чтобы добавить"}</div></div>
+      <div class="hbtns">${draft.id?'<button class="btn danger" type="button" id="o-del">Удалить</button>':""}<button class="btn" type="button" id="o-cancel">Закрыть</button></div></div>
+    <div class="ofields">
+      <label for="o-who">Для кого<input class="f" id="o-who" list="o-clients" autocomplete="off" value="${esc(draft.forWhom||"")}" placeholder="магазин, ИП или имя"></label>
+      <label for="o-date">Доставка<input class="f" type="date" id="o-date" value="${esc(draft.date||"")}"></label>
+    </div>
     <datalist id="o-clients">${clients.map(c=>`<option value="${esc(c.point||c.name)}"></option>`).join("")}</datalist>
-    <label for="o-date">Дата доставки<input class="f" type="date" id="o-date" value="${esc(draft.date||"")}"></label>
-    <div class="osearch">
-      <label for="o-q">Добавить товар<input class="f" id="o-q" type="search" autocomplete="off" placeholder="минтай, хек, креветка…" value="${esc(oq)}"></label>
-      <div id="o-res" class="ores"></div>
-    </div>
-    <div id="o-lines" class="olines"></div>
-    <div class="ototal"><span>Итого</span><b id="o-total">0 ₽</b></div>
+    <input class="f" id="o-q" type="search" autocomplete="off" placeholder="Поиск: минтай, хек, Polar…" value="${esc(oq)}" aria-label="Поиск по прайсу">
+    <div id="o-cats" class="districts" role="group" aria-label="Раздел прайса"></div>
+    <div id="o-list" class="opl"></div>
     <label for="o-comment">Комментарий<input class="f" id="o-comment" value="${esc(draft.comment||"")}" placeholder="например: привезти до 12:00"></label>
-    <div class="actions">
-      <button class="btn primary" type="button" id="o-save">Сохранить</button>
-      <button class="btn" type="button" id="o-send">Отправить</button>
-      <button class="btn" type="button" id="o-cancel">Закрыть</button>
-      <span class="spacer"></span>
-      ${draft.id?'<button class="btn danger" type="button" id="o-del">Удалить</button>':""}
-    </div>
     <div class="err" id="o-err" hidden></div>
+    <div class="obar">
+      <div class="obar-sum"><small id="o-count">0 позиций</small><b id="o-total">0 ₽</b></div>
+      <div class="obar-btns">
+        <button class="btn" type="button" id="o-save">Сохранить</button>
+        <button class="btn primary" type="button" id="o-send">Отправить</button>
+      </div>
+    </div>
   </div>`;
-  renderOrderLines();renderSearch();
+  renderOCats();renderOList();updateSums();
   $("#o-date").onchange=e=>{draft.date=e.target.value};
   $("#o-who").oninput=e=>{draft.forWhom=e.target.value};
   $("#o-comment").oninput=e=>{draft.comment=e.target.value};
-  $("#o-q").oninput=e=>{oq=e.target.value;renderSearch()};
-  $("#o-res").onclick=e=>{const b=e.target.closest("[data-add]");if(!b)return;const it=allItems()[+b.dataset.add];if(!it)return;
-    const unit=defaultUnit(it);draft.items.push({n:it.n,o:it.o||"",p:it.p||"",c:it.c||"",unit,qty:""});oq="";$("#o-q").value="";renderSearch();renderOrderLines();
-    const q=document.querySelectorAll("#o-lines .qty");q[q.length-1]?.focus();};
-  $("#o-lines").oninput=e=>{const i=+e.target.dataset.i;if(isNaN(i))return;if(e.target.classList.contains("qty"))draft.items[i].qty=e.target.value;updateSums()};
-  $("#o-lines").onchange=e=>{const i=+e.target.dataset.i;if(isNaN(i))return;if(e.target.classList.contains("unit")){draft.items[i].unit=e.target.value;renderOrderLines()}};
-  $("#o-lines").onclick=e=>{const b=e.target.closest("[data-rm]");if(!b)return;draft.items.splice(+b.dataset.rm,1);renderOrderLines()};
+  $("#o-q").oninput=e=>{oq=e.target.value;renderOList()};
+  $("#o-cats").onclick=e=>{const b=e.target.closest(".dchip");if(!b)return;ocat=b.dataset.c;renderOCats();renderOList()};
+  const L=$("#o-list");
+  L.onclick=e=>{
+    const row=e.target.closest(".oprow");if(!row)return;const k=row.dataset.k;
+    if(e.target.closest("input,select"))return;
+    const step=e.target.closest("[data-step]");let i=lineIdx(k);
+    if(step){if(i<0)return;const l=draft.items[i];const q=Math.max(0,num(l.qty)+(+step.dataset.step));
+      if(q<=0){draft.items.splice(i,1)}else l.qty=qtyFmt(q);updateRow(k);updateSums();if(ocat==="__sel"&&q<=0)renderOList();return}
+    if(i<0){const it=allItems().find(x=>ikey(x)===k);if(!it)return;draft.items.push({n:it.n,o:it.o||"",p:it.p||"",c:it.c||"",unit:defaultUnit(it),qty:"1"});updateRow(k);updateSums();renderOCats()}
+  };
+  L.oninput=e=>{if(!e.target.classList.contains("qty"))return;const k=e.target.closest(".oprow").dataset.k;const i=lineIdx(k);if(i<0)return;draft.items[i].qty=e.target.value;updateRowSum(k);updateSums()};
+  L.onchange=e=>{const row=e.target.closest(".oprow");if(!row)return;const k=row.dataset.k,i=lineIdx(k);if(i<0)return;
+    if(e.target.classList.contains("unit")){draft.items[i].unit=e.target.value;updateRow(k);updateSums()}
+    if(e.target.classList.contains("qty")&&num(e.target.value)<=0){draft.items.splice(i,1);updateRow(k);updateSums();renderOCats()}};
   $("#o-cancel").onclick=()=>closeOrder(false);
   $("#o-save").onclick=()=>saveOrder(false);
   $("#o-send").onclick=()=>saveOrder(true);
   const del=$("#o-del");if(del){let armed=false;del.onclick=async()=>{if(!armed){armed=true;del.classList.add("armed");del.textContent="Точно удалить?";return}
     try{await dbRef.doc("orders/"+draft.id).delete();closeOrder(false);toast("Заявка удалена")}catch(x){oerr("Не удалось удалить, попробуйте ещё раз.")}}}
 }
-function oerr(m){const e=$("#o-err");e.textContent=m;e.hidden=!m}
-function renderSearch(){
-  const R=$("#o-res");const words=oq.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  if(!words.length){R.innerHTML="";return}
-  const all=allItems();const hits=[];all.forEach((it,i)=>{if(words.every(w=>[it.n,it.o,it.p].join(" ").toLowerCase().includes(w)))hits.push(i)});
-  R.innerHTML=hits.length?hits.slice(0,12).map(i=>{const it=all[i];return `<button type="button" class="ritem" data-add="${i}"><span class="rn">${esc(it.n)}<small>${esc([it.o,it.p].filter(Boolean).join(" · "))}</small></span><span class="rp">${it.c?esc(it.c)+" ₽":"нет цены"}</span></button>`}).join(""):'<div class="muted" style="padding:8px 2px">Ничего не нашлось</div>';
+function oerr(m){const e=$("#o-err");e.textContent=m;e.hidden=!m;if(m)e.scrollIntoView({block:"nearest"})}
+function renderOCats(){
+  const n=draft.items.length;
+  $("#o-cats").innerHTML=[["__sel","В заявке",n],["","Все",""],...price.map(c=>[c.id,c.title,""])].map(([v,l,c])=>`<button type="button" class="dchip${v==="__sel"?" sel":""}" data-c="${esc(v)}" aria-pressed="${ocat===v}">${esc(l)}${c!==""?`<small>${c}</small>`:""}</button>`).join("");
 }
-function renderOrderLines(){
-  const L=$("#o-lines");
-  if(!draft.items.length){L.innerHTML='<div class="muted ohint">Найдите товар в поиске выше и нажмите на него.</div>';updateSums();return}
-  L.innerHTML=draft.items.map((l,i)=>{const kg=boxKg(l.p),pp=priceParts(l.c);const units=["кг","шт"].concat(kg?["кор"]:[]);
-    return `<div class="oline">
-      <div class="on">${esc(l.n)}<small>${esc([l.o,l.p,pp.box&&kg?`коробка ${kg} кг по ${pp.box} ₽`:kg?`коробка ${qtyFmt(kg)} кг`:""].filter(Boolean).join(" · "))}</small></div>
-      <div class="oq"><input class="f qty" data-i="${i}" inputmode="decimal" placeholder="0" value="${esc(l.qty)}" aria-label="Количество">
-        <select class="f unit" data-i="${i}" aria-label="Единица">${units.map(u=>`<option ${u===l.unit?"selected":""}>${u}</option>`).join("")}</select></div>
-      <div class="os" data-sum="${i}"></div>
-      <button type="button" class="orm" data-rm="${i}" aria-label="Убрать">×</button></div>`}).join("");
-  updateSums();
+function rowCtl(k){
+  const i=lineIdx(k);if(i<0)return `<span class="oadd" aria-hidden="true">+</span>`;
+  const l=draft.items[i],kg=boxKg(l.p);const units=["кг","шт"].concat(kg?["кор"]:[]);
+  return `<div class="ostep"><button type="button" class="sbtn" data-step="-1" aria-label="Меньше">−</button><input class="qty" inputmode="decimal" value="${esc(l.qty)}" aria-label="Количество"><button type="button" class="sbtn" data-step="1" aria-label="Больше">+</button></div>
+    <select class="unit" aria-label="Единица">${units.map(u=>`<option ${u===l.unit?"selected":""}>${u}</option>`).join("")}</select>
+    <span class="osm">${unitPrice(l)?money(lineSum(l))+" ₽":"нет цены"}</span>`;
 }
+function rowHtml(it){const k=ikey(it),on=lineIdx(k)>=0;
+  return `<div class="oprow${on?" on":""}" data-k="${esc(k)}" role="button" tabindex="0">
+    <div class="opn">${esc(it.n)}<small>${esc([it.o,it.p].filter(Boolean).join(" · "))}</small></div>
+    <div class="opp">${priceCell(it.c)||'<span class="muted">—</span>'}</div>
+    <div class="opc">${rowCtl(k)}</div></div>`}
+function renderOList(){
+  const words=oq.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const hit=it=>words.every(w=>[it.n,it.o,it.p].join(" ").toLowerCase().includes(w));
+  const L=$("#o-list");
+  if(ocat==="__sel"){const items=draft.items.filter(hit);L.innerHTML=items.length?`<section class="pcat"><div class="opr">${items.map(rowHtml).join("")}</div></section>`:'<div class="empty">В заявке пока ничего нет. Откройте «Все» и нажмите на товар.</div>';return}
+  const out=price.filter(c=>!ocat||c.id===ocat).map(c=>({...c,rows:arr(c.items).filter(hit)})).filter(c=>c.rows.length);
+  L.innerHTML=out.length?out.map(c=>`<section class="pcat"><h2>${esc(c.title)}<small>${c.rows.length} поз.</small></h2><div class="opr">${c.rows.map(rowHtml).join("")}</div></section>`).join(""):'<div class="empty">Ничего не нашлось.</div>';
+}
+function rowEl(k){return [...document.querySelectorAll("#o-list .oprow")].find(r=>r.dataset.k===k)}
+function updateRow(k){const r=rowEl(k);if(!r)return;r.classList.toggle("on",lineIdx(k)>=0);r.querySelector(".opc").innerHTML=rowCtl(k)}
+function updateRowSum(k){const r=rowEl(k),i=lineIdx(k);if(!r||i<0)return;const s=r.querySelector(".osm");if(s){const l=draft.items[i];s.textContent=unitPrice(l)?money(lineSum(l))+" ₽":"нет цены"}}
 function updateSums(){
-  draft.items.forEach((l,i)=>{const el=document.querySelector(`[data-sum="${i}"]`);if(el)el.textContent=unitPrice(l)?`${money(lineSum(l))} ₽`:"нет цены"});
-  const t=$("#o-total");if(t)t.textContent=money(orderTotal({items:draft.items.map(l=>({...l,sum:lineSum(l)}))}))+" ₽";
+  const n=draft.items.filter(l=>num(l.qty)>0).length;
+  const c=$("#o-count");if(c)c.textContent=`${n} ${n===1?"позиция":n>1&&n<5?"позиции":"позиций"}`;
+  const t=$("#o-total");if(t)t.textContent=money(draft.items.reduce((s,l)=>s+lineSum(l),0))+" ₽";
+  const sc=document.querySelector('#o-cats [data-c="__sel"] small');if(sc)sc.textContent=draft.items.length;
 }
 async function saveOrder(send){
   oerr("");
