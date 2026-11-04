@@ -544,7 +544,11 @@ $("#onew").addEventListener("click",()=>{if(dbRef)openOrder(null,null,"oedit")})
 function orderText(o){
   const c=clients.find(x=>x.id===o.clientId)||{};
   const head=[`Заявка: ${whoOf(o)}`+(c.name&&c.name!==whoOf(o)?` (${c.name})`:""),c.address?`Адрес: ${c.address}`:"",`Доставка: ${dayLabel(o.date)}`].filter(Boolean);
-  const lines=arr(o.items).map((l,i)=>`${i+1}. ${l.n}${l.o?" ("+l.o+")":""} — ${qtyFmt(num(l.qty))} ${l.unit}${l.unit==="кор"&&boxKg(l.p)?` (${qtyFmt(boxKg(l.p)*num(l.qty))} кг)`:""} × ${money(unitPrice(l))} = ${money(l.sum??lineSum(l))} ₽`);
+  // Формат как в офисе: «Креветка северная 150+ (580) 15» — цена за кг, количество в кг; коробки переводятся в кг
+  const lines=arr(o.items).map(l=>{const pp=priceParts(l.c),q=num(l.qty),kg=boxKg(l.p);
+    if(l.unit==="кор"&&kg)return `${l.n} (${pp.box||pp.one}) ${qtyFmt(q*kg)}`;
+    if(l.unit==="шт")return `${l.n} (${pp.one}) ${qtyFmt(q)} шт`;
+    return `${l.n} (${pp.one}) ${qtyFmt(q)}`;});
   return [...head,"",...lines,"",`Итого: ${money(o.total??orderTotal(o))} ₽`,o.comment?`Комментарий: ${o.comment}`:""].filter((x,i,a)=>x!==""||a[i-1]!=="").join("\n").trim();
 }
 function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>t.hidden=true,2600)}
